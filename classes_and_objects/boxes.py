@@ -69,6 +69,19 @@ class Text_box():
     def update_text(self, new_text):
         self.text = new_text
 
+    def change_pos(self,new_x:int,new_y:int):
+
+        self.x = new_x
+        self.y = new_y
+
+        self.rect = pygame.Rect(new_x, new_y, self.width, self.height)
+
+    def change_x_pos(self, new_x:int):
+        self.change_pos(new_x, self.y)
+    
+    def change_y_pos(self, new_y:int):
+        self.change_pos(self.x, new_y)
+
     # ----- DRAW FUNCTIONS -----
 
     def draw_textbox(self):
